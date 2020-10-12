@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XiangJiang.Log.File\XiangJiang.Logging.File.csproj" />
+    <ProjectReference Include="..\XiangJiang.Logging.File\XiangJiang.Logging.File.csproj" />
   </ItemGroup>
 
 </Project>
