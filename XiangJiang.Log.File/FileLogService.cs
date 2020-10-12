@@ -5,9 +5,9 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Formatting.Display;
 using XiangJiang.Common;
-using XiangJiang.Log.Abstractions;
+using XiangJiang.Logging.Abstractions;
 
-namespace XiangJiang.Log.File
+namespace XiangJiang.Logging.File
 {
     /// <summary>
     ///     基于Serilog的本地日志

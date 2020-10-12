@@ -11,13 +11,15 @@
     <PackageProjectUrl>https://github.com/YanZhiwei/XiangJiang.Log.File</PackageProjectUrl>
     <RepositoryUrl>https://github.com/YanZhiwei/XiangJiang.Log.File</RepositoryUrl>
     <Version>1.0.1</Version>
+    <AssemblyName>XiangJiang.Logging.File</AssemblyName>
+    <RootNamespace>XiangJiang.Logging.File</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
-    <PackageReference Include="XiangJiang" Version="1.0.3" />
-    <PackageReference Include="XiangJiang.Log.Abstractions" Version="1.0.0" />
+    <PackageReference Include="XiangJiang" Version="1.0.7" />
+    <PackageReference Include="XiangJiang.Logging.Abstractions" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.assets\nugetico.png">

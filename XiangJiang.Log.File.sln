@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Log.File", "XiangJiang.Log.File\XiangJiang.Log.File.csproj", "{73A75C1E-DA02-48D1-8FEC-E996CB9C2EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Logging.File", "XiangJiang.Log.File\XiangJiang.Logging.File.csproj", "{73A75C1E-DA02-48D1-8FEC-E996CB9C2EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiangJiang.Log.FileTests", "XiangJiang.Log.FileTests\XiangJiang.Log.FileTests.csproj", "{AFD8A7C8-31C0-416F-B5CC-67E6A4400928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Log.FileTests", "XiangJiang.Log.FileTests\XiangJiang.Log.FileTests.csproj", "{AFD8A7C8-31C0-416F-B5CC-67E6A4400928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
