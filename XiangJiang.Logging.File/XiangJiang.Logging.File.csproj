@@ -6,11 +6,11 @@
     <Product>XiangJiang</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright YanZhiwei 2020</Copyright>
-    <Description>Local log class library based on serilog,using the document: https://github.com/YanZhiwei/XiangJiang.Log.File/wiki; Welcome to pull request or star.</Description>
+    <Description>Local log class library based on serilog,using the document: https://github.com/YanZhiwei/XiangJiang.Logging.File/wiki; Welcome to pull request or star.</Description>
     <PackageIcon>nugetico.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/YanZhiwei/XiangJiang.Log.File</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/YanZhiwei/XiangJiang.Log.File</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/YanZhiwei/XiangJiang.Logging.File</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/YanZhiwei/XiangJiang.Logging.File</RepositoryUrl>
+    <Version>1.0.0</Version>
     <AssemblyName>XiangJiang.Logging.File</AssemblyName>
     <RootNamespace>XiangJiang.Logging.File</RootNamespace>
   </PropertyGroup>
