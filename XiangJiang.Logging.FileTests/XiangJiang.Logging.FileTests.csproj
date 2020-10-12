@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>XiangJiang.Logging.FileTests</AssemblyName>
+
+    <RootNamespace>XiangJiang.Logging.FileTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XiangJiang.Log.File\XiangJiang.Log.File.csproj" />
+    <ProjectReference Include="..\XiangJiang.Log.File\XiangJiang.Logging.File.csproj" />
   </ItemGroup>
 
 </Project>

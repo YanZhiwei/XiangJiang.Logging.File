@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using XiangJiang.Log.Abstractions;
-using XiangJiang.Log.File;
+using XiangJiang.Logging.Abstractions;
+using XiangJiang.Logging.File;
 
-namespace XiangJiang.Log.FileTests
+namespace XiangJiang.Logging.FileTests
 {
     [TestClass]
     public class FileLogServiceTests
