@@ -27,4 +27,4 @@ jobs:
              Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
       - name: Push generated package to GitHub registry
         run: |
-          .\nuget push .\XiangJiang.Log.File\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols
+          .\nuget push .\XiangJiang.Logging.File\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols
