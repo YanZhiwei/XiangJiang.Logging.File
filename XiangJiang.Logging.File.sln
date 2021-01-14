@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Logging.File", "XiangJiang.Logging.File\XiangJiang.Logging.File.csproj", "{2BC56FCA-C1CF-4E30-8002-2BB3CCD808AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XiangJiang.Logging.FileTests", "XiangJiang.Logging.FileTests\XiangJiang.Logging.FileTests.csproj", "{3E8B4938-44D8-49B4-9E19-5289A3C37F30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiangJiang.Logging.FileTests", "XiangJiang.Logging.FileTests\XiangJiang.Logging.FileTests.csproj", "{EC7C4BB8-227C-4D7E-A672-9C86A76A12D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2BC56FCA-C1CF-4E30-8002-2BB3CCD808AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BC56FCA-C1CF-4E30-8002-2BB3CCD808AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BC56FCA-C1CF-4E30-8002-2BB3CCD808AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E8B4938-44D8-49B4-9E19-5289A3C37F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E8B4938-44D8-49B4-9E19-5289A3C37F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E8B4938-44D8-49B4-9E19-5289A3C37F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E8B4938-44D8-49B4-9E19-5289A3C37F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7C4BB8-227C-4D7E-A672-9C86A76A12D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7C4BB8-227C-4D7E-A672-9C86A76A12D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7C4BB8-227C-4D7E-A672-9C86A76A12D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7C4BB8-227C-4D7E-A672-9C86A76A12D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
