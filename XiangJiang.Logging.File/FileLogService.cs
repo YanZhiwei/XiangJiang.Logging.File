@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using Serilog;
@@ -96,7 +97,7 @@ namespace XiangJiang.Logging.File
                 .ToStringOrDefault("Day");
             loggerConfig.WriteTo
                 .File(new MessageTemplateTextFormatter(
-                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level} {Message:lj}{NewLine}{Exception}")
+                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level} {Message:lj}{NewLine}{Exception}", CultureInfo.InvariantCulture)
                     , logPath
                     , retainedFileCountLimit: retainedFileCountLimit
                     , fileSizeLimitBytes: fileSizeLimitBytes
