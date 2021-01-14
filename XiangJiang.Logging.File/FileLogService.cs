@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
 using System.Text;
 using Serilog;
 using Serilog.Core;
@@ -24,10 +25,13 @@ namespace XiangJiang.Logging.File
         #region Constructors
 
         public FileLogService()
+            : this(null)
         {
-            var loggerConfig = new LoggerConfiguration();
-            SetMinimumLevel(loggerConfig);
-            _logger = CreateLogger(loggerConfig);
+        }
+
+        public FileLogService(LoggerConfiguration loggerConfiguration)
+        {
+            _logger = (loggerConfiguration ?? CreateDefaultConfiguration()).CreateLogger();
         }
 
         #endregion Constructors
@@ -37,11 +41,6 @@ namespace XiangJiang.Logging.File
         public void Debug(string message)
         {
             _logger.Debug(message);
-        }
-
-        public void Debug(string message, Exception ex)
-        {
-            _logger.Debug(ex, message);
         }
 
         public void Dispose()
@@ -74,23 +73,15 @@ namespace XiangJiang.Logging.File
             _logger.Information(message);
         }
 
-        public void Info(string message, Exception ex)
-        {
-            _logger.Information(ex, message);
-        }
-
         public void Warn(string message)
         {
             _logger.Warning(message);
         }
 
-        public void Warn(string message, Exception ex)
+        private LoggerConfiguration CreateDefaultConfiguration()
         {
-            _logger.Warning(ex, message);
-        }
-
-        private Logger CreateLogger(LoggerConfiguration loggerConfig)
-        {
+            var loggerConfig = new LoggerConfiguration();
+            SetMinimumLevel(loggerConfig);
             var retainedFileCountLimit = ConfigurationManager
                 .AppSettings["serilog:write-to:File.retainedFileCountLimit"].ToInt32OrDefault(31);
             var fileSizeLimitBytes = ConfigurationManager.AppSettings["serilog:write-to:File.fileSizeLimitBytes"]
@@ -99,18 +90,21 @@ namespace XiangJiang.Logging.File
                 .ToBooleanOrDefault(true);
             var fileShared = ConfigurationManager.AppSettings["serilog:write-to:File.shared"].ToBooleanOrDefault();
             var logPath = ConfigurationManager.AppSettings["serilog:write-to:File.path"]
-                .ToStringOrDefault($"{DateTime.Now:yyyyMMdd}.log");
+                .ToStringOrDefault(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log",
+                    ".log"));
+            var rollingInterval = ConfigurationManager.AppSettings["serilog:write-to:File.rollingInterval"]
+                .ToStringOrDefault("Day");
             loggerConfig.WriteTo
                 .File(new MessageTemplateTextFormatter(
-                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level} {Message:lj}{NewLine}{Exception}",
-                        null)
+                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level} {Message:lj}{NewLine}{Exception}")
                     , logPath
                     , retainedFileCountLimit: retainedFileCountLimit
                     , fileSizeLimitBytes: fileSizeLimitBytes
                     , rollOnFileSizeLimit: rollOnFileSizeLimit
                     , shared: fileShared
+                    , rollingInterval: Enum.Parse<RollingInterval>(rollingInterval)
                     , encoding: Encoding.UTF8);
-            return loggerConfig.CreateLogger();
+            return loggerConfig;
         }
 
         private void SetMinimumLevel(LoggerConfiguration loggerConfig)
