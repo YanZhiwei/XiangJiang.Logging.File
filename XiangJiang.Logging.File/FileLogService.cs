@@ -8,6 +8,7 @@ using Serilog.Core;
 using Serilog.Formatting.Display;
 using XiangJiang.Common;
 using XiangJiang.Logging.Abstractions;
+using XiangJiang.Logging.File.Enrichers;
 
 namespace XiangJiang.Logging.File
 {
@@ -81,7 +82,8 @@ namespace XiangJiang.Logging.File
 
         private LoggerConfiguration CreateDefaultConfiguration()
         {
-            var loggerConfig = new LoggerConfiguration();
+            var loggerConfig = new LoggerConfiguration()
+                .Enrich.With(new ThreadIdEnricher());
             SetMinimumLevel(loggerConfig);
             var retainedFileCountLimit = ConfigurationManager
                 .AppSettings["serilog:write-to:File.retainedFileCountLimit"].ToInt32OrDefault(31);
@@ -97,13 +99,13 @@ namespace XiangJiang.Logging.File
                 .ToStringOrDefault("Day");
             loggerConfig.WriteTo
                 .File(new MessageTemplateTextFormatter(
-                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} {Level} {Message:lj}{NewLine}{Exception}", CultureInfo.InvariantCulture)
+                        "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({ThreadId}) {Message}{NewLine}{Exception}", CultureInfo.InvariantCulture)
                     , logPath
                     , retainedFileCountLimit: retainedFileCountLimit
                     , fileSizeLimitBytes: fileSizeLimitBytes
                     , rollOnFileSizeLimit: rollOnFileSizeLimit
                     , shared: fileShared
-                    , rollingInterval: Enum.Parse<RollingInterval>(rollingInterval)
+                    , rollingInterval: (RollingInterval)Enum.Parse(typeof(RollingInterval), rollingInterval)
                     , encoding: Encoding.UTF8);
             return loggerConfig;
         }
